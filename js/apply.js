@@ -10,7 +10,7 @@ import { JOBS } from './jobs.js';
   /* ── Base URL — auto-detect dev vs production ────────────── */
   const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:5000'
-    : '';  // same domain in production
+    : 'https://vertex-backend.fly.dev';  // same domain in production
 
   /* ── DOM refs ────────────────────────────────────────────── */
   const step1        = document.getElementById('step-1');
