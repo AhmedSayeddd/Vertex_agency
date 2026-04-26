@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Role | Vertex Recruitment Agency</title>
+  <meta name="description" content="Apply directly for a specific job opening at Vertex Recruitment Agency.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/apply-offer.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <!-- Loading offer details -->
+      <div id="offer-loading" class="offer-loading-wrap">
+        <div class="spinner"></div>
+        <p>Loading offer details…</p>
+      </div>
+
+      <!-- Offer not found -->
+      <div id="offer-not-found" class="not-found-wrap" style="display:none;">
+        <div class="not-found-icon">🔍</div>
+        <h2>Offer Not Found</h2>
+        <p>This offer may no longer be active.</p>
+        <a href="offers.html" class="btn btn-primary mt-3">Browse All Offers</a>
+      </div>
+
+      <!-- Main apply form -->
+      <div id="apply-content" style="display:none;">
+
+        <!-- Offer header (read-only) -->
+        <div class="offer-header-card glass-card" id="offer-header" data-aos="fade-up">
+          <div class="offer-header-badge">Applying For</div>
+          <div class="offer-header-company" id="offer-company-name"></div>
+          <h1 class="offer-header-title" id="offer-job-title"></h1>
+          <div class="offer-header-meta" id="offer-meta"></div>
+        </div>
+
+        <!-- Application Form -->
+        <div class="glass-card apply-form-card" data-aos="fade-up" data-aos-delay="100">
+          <h2>Your Application</h2>
+          <p class="form-desc">Fill in your details below. Fields marked <span class="req-star">*</span> are required.</p>
+
+          <form id="direct-apply-form">
+            <div class="form-section-title">Personal Information</div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="full_name">Full Name <span class="req-star">*</span></label>
+                <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Ahmed Hassan" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="age">Age <span class="req-star">*</span></label>
+                <input type="number" id="age" name="age" class="form-control" placeholder="25" min="18" max="65" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number <span class="req-star">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+20 100 000 0000" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address <span class="req-star">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="ahmed@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nationality">Nationality <span class="req-star">*</span></label>
+                <select id="nationality" name="nationality" class="form-control form-select" required>
+                  <option value="">Select…</option>
+                  <option value="Egyptian">Egyptian</option>
+                  <option value="Foreigner">Foreigner</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="gender">Gender <span class="req-star">*</span></label>
+                <select id="gender" name="gender" class="form-control form-select" required>
+                  <option value="">Select…</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="city">City / Area of Residence <span class="req-star">*</span></label>
+                <input type="text" id="city" name="city" class="form-control" placeholder="Nasr City, Cairo" required>
+              </div>
+            </div>
+
+            <div class="form-section-title">Professional Details</div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="english_level">English Level <span class="req-star">*</span></label>
+                <select id="english_level" name="english_level" class="form-control form-select" required>
+                  <option value="">Select…</option>
+                  <option value="A2">A2 – Basic</option>
+                  <option value="B1">B1 – Intermediate</option>
+                  <option value="B1+">B1+ – Intermediate+</option>
+                  <option value="B2">B2 – Upper-Intermediate</option>
+                  <option value="B2+">B2+ – Upper-Intermediate+</option>
+                  <option value="C1">C1 – Advanced</option>
+                  <option value="C2">C2 – Proficiency</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="experience">Work Experience <span class="req-star">*</span></label>
+                <select id="experience" name="experience" class="form-control form-select" required>
+                  <option value="">Select…</option>
+                  <option value="None">None</option>
+                  <option value="Less than 6 months">Less than 6 months</option>
+                  <option value="6 months–1 year">6 months – 1 year</option>
+                  <option value="1+ years">1+ years</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="graduation_status">Graduation Status <span class="req-star">*</span></label>
+                <select id="graduation_status" name="graduation_status" class="form-control form-select" required>
+                  <option value="">Select…</option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Dropout">Dropout</option>
+                  <option value="Gap Year">Gap Year</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section-title">Cover Message <span style="color:#64748B;font-weight:400;font-size:0.85rem;">(optional)</span></div>
+            <div class="form-group">
+              <textarea id="cover_message" name="cover_message" class="form-control" rows="4"
+                placeholder="Tell us briefly why you're a great fit for this role…"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-large btn-full" id="submit-btn">
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="glass-card success-card" id="success-screen" style="display:none;">
+          <div class="success-icon-wrap">🎉</div>
+          <h2>Application Submitted!</h2>
+          <p>Thank you <strong id="success-name"></strong>! Our recruitment team will review your application and contact you shortly.</p>
+          <div class="success-actions">
+            <a href="offers.html" class="btn btn-outline">Browse More Offers</a>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/animations.js"></script>
+  <script type="module" src="js/apply-offer.js"></script>
+</body>
+</html>
