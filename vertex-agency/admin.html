@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Vertex Recruitment Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ══ ADMIN PASSWORD OVERLAY ════════════════════════════ -->
+  <div id="admin-auth-overlay" class="admin-auth-overlay">
+    <div class="auth-card glass-card">
+      <img src="assets/images/logo.png" alt="Vertex" class="auth-logo">
+      <h2>Admin Access</h2>
+      <p>Please enter the dashboard password.</p>
+      <div class="auth-input-group">
+        <input type="password" id="admin-password-input" placeholder="Password" />
+        <button id="admin-login-btn" class="btn btn-primary">Enter</button>
+      </div>
+      <div id="admin-auth-error" class="auth-error"></div>
+    </div>
+  </div>
+
+  <header class="admin-header glass-panel">
+    <div class="admin-header-inner">
+      <a href="index.html" class="admin-logo">
+        <img src="assets/images/logo.png" alt="Vertex">
+      </a>
+      <span class="admin-title-label">Admin Dashboard</span>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+
+      <!-- ══ STATS BAR ════════════════════════════════════════ -->
+      <section class="stats-row">
+        <div class="glass-card stat-mini-card">
+          <div class="stat-mini-num green" id="stat-total">—</div>
+          <div class="stat-mini-label">Total Applications</div>
+        </div>
+        <div class="glass-card stat-mini-card">
+          <div class="stat-mini-num teal" id="stat-new">—</div>
+          <div class="stat-mini-label">New</div>
+        </div>
+        <div class="glass-card stat-mini-card">
+          <div class="stat-mini-num blue" id="stat-reviewed">—</div>
+          <div class="stat-mini-label">Reviewed</div>
+        </div>
+        <div class="glass-card stat-mini-card">
+          <div class="stat-mini-num purple" id="stat-offers">—</div>
+          <div class="stat-mini-label">Active Offers</div>
+        </div>
+      </section>
+
+      <!-- ══ APPLICATIONS TABLE ═══════════════════════════════ -->
+      <section class="dashboard-section">
+        <div class="section-header">
+          <h2>Applications</h2>
+          <button class="btn btn-outline btn-sm" id="refresh-apps-btn">↻ Refresh</button>
+        </div>
+        <div class="glass-card table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Nationality</th>
+                <th>English</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Applied For</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applications-tbody">
+              <tr><td colspan="12" class="table-loading">Loading applications…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══ OFFERS MANAGEMENT ═════════════════════════════════ -->
+      <section class="dashboard-section">
+        <div class="section-header">
+          <h2>Offers Management</h2>
+          <button class="btn btn-outline btn-sm" id="refresh-offers-btn">↻ Refresh</button>
+        </div>
+        <div class="glass-card table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>English</th>
+                <th>Status</th>
+                <th>Toggle</th>
+              </tr>
+            </thead>
+            <tbody id="offers-tbody">
+              <tr><td colspan="8" class="table-loading">Loading offers…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

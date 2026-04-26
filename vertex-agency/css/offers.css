@@ -1,0 +1,190 @@
+/* =============================================
+   OFFERS — PAGE WRAPPER
+============================================= */
+.page-wrapper {
+  padding-top: 100px;
+}
+
+.page-hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.page-hero .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  color: #94A3B8;
+  font-size: 1.05rem;
+}
+
+/* =============================================
+   FILTERS
+============================================= */
+.filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  flex: 2;
+  min-width: 240px;
+}
+
+.filter-select-wrap {
+  flex: 1;
+  min-width: 160px;
+}
+
+.filter-count {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.filter-count span {
+  color: #14B8A6;
+  font-weight: 700;
+}
+
+/* =============================================
+   OFFERS GRID
+============================================= */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 4rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #94A3B8;
+}
+
+.no-results p { font-size: 1.1rem; }
+
+/* =============================================
+   OFFER CARD
+============================================= */
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.offer-card-top {
+  padding: 1.75rem;
+  flex: 1;
+}
+
+.offer-card-bottom {
+  padding: 1rem 1.75rem 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.offer-company {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #14B8A6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.offer-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #F0EAFC;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.offer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.offer-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  color: #64748B;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #F0EAFC;
+  font-weight: 500;
+  text-align: right;
+  max-width: 60%;
+}
+
+.salary-value {
+  background: linear-gradient(90deg, #40F72A, #14B8A6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Loading Skeleton */
+.skeleton-card {
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 1.75rem;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-line.short { width: 40%; }
+.skeleton-line.medium { width: 70%; }
+.skeleton-line.long { width: 100%; }
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 768px) {
+  .filters-bar { flex-direction: column; align-items: stretch; }
+  .filter-count { margin-left: 0; }
+  .offers-grid { grid-template-columns: 1fr; }
+}

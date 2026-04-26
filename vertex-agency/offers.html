@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Offers | Vertex Recruitment Agency</title>
+  <meta name="description" content="Browse all active job offers at Vertex Recruitment Agency. Filter by work type and find the perfect role for you.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/offers.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <!-- ══ PAGE HERO ════════════════════════════════════════ -->
+      <div class="page-hero" data-aos="fade-up">
+        <p style="color:#14B8A6;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">Now Hiring</p>
+        <h1 class="section-title">Active <span class="text-gradient">Opportunities</span></h1>
+        <p>All open positions updated in real time. Find your perfect match below.</p>
+      </div>
+
+      <!-- ══ FILTER BAR ════════════════════════════════════════ -->
+      <div class="filters-bar glass-panel" data-aos="fade-up" data-aos-delay="100">
+        <input
+          type="text"
+          id="search-input"
+          class="form-control filter-search"
+          placeholder="🔍  Search by job title, company, or location..."
+          autocomplete="off"
+        >
+        <select id="work-type-filter" class="form-control form-select filter-select-wrap">
+          <option value="all">All Work Types</option>
+          <option value="on-site">On-site</option>
+          <option value="wfh">Work from Home</option>
+        </select>
+        <p class="filter-count" id="result-count"><span>—</span> offers</p>
+      </div>
+
+      <!-- ══ OFFERS GRID ════════════════════════════════════════ -->
+      <div id="offers-grid" class="offers-grid">
+        <!-- Populated by offers.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- navbar (plain script, not module) -->
+  <script src="js/navbar.js"></script>
+  <script src="js/animations.js"></script>
+  <!-- offers (ES module — imports jobs.js) -->
+  <script type="module" src="js/offers.js"></script>
+</body>
+</html>
